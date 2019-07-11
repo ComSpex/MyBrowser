@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyBrowser"
         mc:Ignorable="d"
-        Title="Which browser you wanna use?" Height="105.479" Width="160" WindowStyle="ToolWindow" Icon="MyBrowser.ico" WindowStartupLocation="CenterOwner" ResizeMode="CanResizeWithGrip" Background="{x:Null}">
+        Title="2.0 - Which browser you wanna use?" Height="105.479" Width="160" WindowStyle="ToolWindow" Icon="MyBrowser.ico" WindowStartupLocation="CenterOwner" ResizeMode="CanResizeWithGrip" Background="{x:Null}">
 	<StackPanel Background="#FCFFFFFF">
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 			<StackPanel.Resources>
