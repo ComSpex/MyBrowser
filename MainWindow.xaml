@@ -1,0 +1,29 @@
+﻿<Window x:Class="MyBrowser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyBrowser"
+        mc:Ignorable="d"
+        Title="Which browser you wanna use?" Height="105.479" Width="160" WindowStyle="ToolWindow" Icon="MyBrowser.ico" WindowStartupLocation="CenterOwner" ResizeMode="CanResizeWithGrip" Background="{x:Null}">
+	<StackPanel Background="#FCFFFFFF">
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+			<StackPanel.Resources>
+				<Style TargetType="Image">
+					<EventSetter Event="MouseUp" Handler="Image1_MouseUp" />
+					<Setter Property="Cursor" Value="Hand" />
+				</Style>
+			</StackPanel.Resources>
+			<Image x:Name="Image1_png" Source="Image1.png" Stretch="None" Tag="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"/>
+			<Image x:Name="Image2_png" Source="Image2.png" Stretch="None" Tag="C:\Program Files (x86)\Internet Explorer\iexplore.exe"/>
+			<!--
+		<Image x:Name="BookShelf_png" Source="BookShelf.png" Stretch="None" Tag="C:\Program Files (x86)\Microsoft Reference\Microsoft Bookshelf 3.0\BS3.exe"/>
+		-->
+		</StackPanel>
+		<StackPanel x:Name="URLs">
+		</StackPanel>
+		<Menu x:Name="menu" Height="100" Visibility="Hidden">
+			<MenuItem x:Name="MacMillan" IsChecked="True" Header="MacMillan" Click="MacMillan_Click"/>
+		</Menu>
+	</StackPanel>
+</Window>
