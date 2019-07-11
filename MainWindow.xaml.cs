@@ -93,6 +93,7 @@ namespace MyBrowser {
 				foreach(Process proc in procs) {
 					if(Apps.Contains(proc.ProcessName)) {
 						proc.Kill();
+						break;
 					}
 				}
 			}
