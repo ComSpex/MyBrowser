@@ -19,7 +19,6 @@ namespace MyBrowser {
 	public partial class MainWindow:Window,IDisposable {
 		protected string url = String.Empty;
 		protected Timer ticker;
-		protected List<string> Apps = new List<string>();
 		protected int life = 1;
 		[EnvironmentPermission(SecurityAction.LinkDemand,Unrestricted = true)]
 		public MainWindow() {
@@ -86,14 +85,19 @@ namespace MyBrowser {
 			}
 			return urn;
 		}
+		protected List<string> Apps = new List<string>();
 		private void Image1_MouseUp(object sender,MouseButtonEventArgs e) {
 			Image im = sender as Image;
 			if(Apps.Count>0) {
 				Process[] procs = Process.GetProcesses();
 				foreach(Process proc in procs) {
 					if(Apps.Contains(proc.ProcessName)) {
+						Debug.WriteLine("!!"+proc.ProcessName);
+						//MessageBox.Show(proc.ProcessName);
 						proc.Kill();
-						break;
+						//break;
+					} else {
+						Debug.WriteLine(proc.ProcessName);
 					}
 				}
 			}
@@ -109,6 +113,7 @@ namespace MyBrowser {
 			browser.Exited+=Browser_Exited;
 			browser.Disposed+=Browser_Disposed;
 			//browser.WaitForInputIdle();
+			//MessageBox.Show(browser.ProcessName);
 			Apps.Add(browser.ProcessName);
 		}
 		private void Browser_Disposed(object sender,EventArgs e) {
